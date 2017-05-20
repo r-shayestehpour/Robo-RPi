@@ -19,7 +19,7 @@ pi.set_PWM_range(left_motor_en, 100)
 
 ################################# init server socket
 
-HOST = ''                 # Symbolic name meaning all available interfaces‘
+HOST = ''                 # Symbolic name meaning all available interfaces
 PORT = 9001              # Arbitrary non-privileged port
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((HOST, PORT))
@@ -51,6 +51,6 @@ while 1:
         pi.set_PWM_dutycycle(left_motor_en, MAX_PWM_DUTYCYCLE - gyro_y)
     
     if not data: break
-    print i
+    print gyro_y
 
 conn.close()
