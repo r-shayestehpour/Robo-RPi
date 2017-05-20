@@ -3,18 +3,14 @@ import time
 
 pi = pigpio.pi()
 
-e = 27
-i1 = 17
-i2 = 22
+right_motor_en = 27
+left_motor_en = 17
 
-pi.set_mode(e, pigpio.OUTPUT)
-pi.set_mode(i1, pigpio.OUTPUT)
-pi.set_mode(i2, pigpio.OUTPUT)
+pi.set_mode(right_motor_en, pigpio.OUTPUT)
+pi.set_mode(left_motor_en, pigpio.OUTPUT)
 
-pi.set_PWM_range(e, 100)
-
-pi.write(i1, 1)
-pi.write(i2, 0)
+pi.set_PWM_range(right_motor_en, 100)
+pi.set_PWM_range(left_motor_en, 100)
 
 import socket
 
