@@ -5,17 +5,31 @@ import socket
 pi = pigpio.pi()
 
 ################################# const
+right_motor_in1 = 2
+right_motor_en = 3
+right_motor_in2 = 4
 
-right_motor_en = 27
-left_motor_en = 17
+left_motor_in1 = 17
+left_motor_en = 27
+left_motor_in2 = 22
 
 ################################# init rpi gpio
 
+pi.set_mode(right_motor_in1, pigpio.OUTPUT)
 pi.set_mode(right_motor_en, pigpio.OUTPUT)
+pi.set_mode(right_motor_in2, pigpio.OUTPUT)
+
+pi.set_mode(left_motor_in1, pigpio.OUTPUT)
 pi.set_mode(left_motor_en, pigpio.OUTPUT)
+pi.set_mode(left_motor_in2, pigpio.OUTPUT)
 
 pi.set_PWM_range(right_motor_en, 100)
+pi.write(right_motor_in1, 1)
+pi.write(right_motor_in2, 0)
+
 pi.set_PWM_range(left_motor_en, 100)
+pi.write(left_motor_in1, 1)
+pi.write(left_motor_in2, 0)
 
 ################################# init server socket
 
