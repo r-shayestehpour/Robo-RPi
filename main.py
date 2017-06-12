@@ -9,9 +9,9 @@ right_motor_in1 = 2
 right_motor_en = 3
 right_motor_in2 = 4
 
-left_motor_in1 = 17
+left_motor_in1 = 22
 left_motor_en = 27
-left_motor_in2 = 22
+left_motor_in2 = 17
 
 ################################# init rpi gpio
 
